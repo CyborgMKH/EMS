@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "";
+    ViewBag.Title = "Employee Management System Login";
+}
+
+<style>
+    /* Add your custom CSS styles here */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #F1F1F1;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    label {
+        display: block;
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 5px;
+    }
+
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+        input[type=submit]:hover {
+            background-color: #3e8e41;
+        }
+</style>
+
+<h1>Employee Management System Login</h1>
+
+@using (Html.BeginForm("login", "user", FormMethod.Post))
+{
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="userName" required>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <input type="submit" value="Login">
+}

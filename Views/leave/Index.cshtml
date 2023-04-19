@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EMS.Models.LeaveTable>
+
+@{
+    ViewData["Title"] = "Leave List";
+}
+
+<h1>Eployee Leave List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LeaveDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeaveStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remarks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.EmployeeName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.LeaveId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.LeaveId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.LeaveId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

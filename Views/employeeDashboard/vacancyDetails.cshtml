@@ -1,0 +1,46 @@
+﻿@model IEnumerable<EMS.Models.VacancyTable>
+
+@{
+    ViewData["Title"] = "vacancyDetails";
+    Layout = "~/Views/Shared/employeeDashboard.cshtml";
+}
+
+<h1>Vacancy Details</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VacancyFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VacancyTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VacancyFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VacancyTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesignationId)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

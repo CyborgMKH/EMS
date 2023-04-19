@@ -1,0 +1,34 @@
+﻿@model IEnumerable<EMS.Models.DepartmentTable>
+
+@{
+    ViewData["Title"] = "departmentDetails";
+    Layout = "~/Views/Shared/employeeDashboard.cshtml";
+}
+
+<h1>Department Details</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

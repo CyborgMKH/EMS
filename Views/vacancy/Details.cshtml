@@ -1,0 +1,42 @@
+﻿@model EMS.Models.VacancyTable
+
+@{
+    ViewData["Title"] = "Vacancy Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>VacancyTable</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VacancyFrom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VacancyFrom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VacancyTo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VacancyTo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Department.DepartmentName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Designation.DesignationName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.VacancyId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

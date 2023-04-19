@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EMS.Models.VacancyTable>
+
+@{
+    ViewData["Title"] = "Vacancy List";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VacancyFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VacancyTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VacancyFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VacancyTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation.DesignationName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VacancyId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.VacancyId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.VacancyId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
